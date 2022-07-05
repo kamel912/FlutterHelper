@@ -1,0 +1,9 @@
+part of '${cubit_snake_case}_cubit.dart';
+
+
+@freezed
+class ${cubit_pascal_case}State with _${cubit_dollar_sign_case}State{
+  const factory ${cubit_pascal_case}State() = ${cubit_pascal_case}Initial;
+
+}
+

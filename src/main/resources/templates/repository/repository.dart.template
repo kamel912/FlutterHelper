@@ -1,0 +1,1 @@
+abstract class ${repository_pascal_case}Repository {}

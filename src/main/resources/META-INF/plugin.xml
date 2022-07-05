@@ -1,0 +1,61 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.mkprogs.FlutterHelper</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Flutter Helper</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="support@mkprogs.com" url="https://www.mkprogs.com">MK Progs</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Used for generate flutter code templates
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <group id="FlutterGenerator"
+               text="Flutter Generators"
+               popup="true"
+               icon="/icons/flutter.svg">
+            <add-to-group group-id="NewGroup"
+                          anchor="first"/>
+        </group>
+        <action id="GenerateBlocAction"
+                class="com.mkprogs.flutterhelper.actions.bloc.GenerateBlocAction" text="Bloc" icon="/icons/bloc.png">
+            <add-to-group group-id="FlutterGenerator" anchor="first"/>
+        </action>
+
+        <action id="GenerateCubitAction"
+                class="com.mkprogs.flutterhelper.actions.bloc.GenerateCubitAction" text="Cubit" icon="/icons/cubit.png"
+                description="GenerateCubitAction">
+            <add-to-group group-id="FlutterGenerator" anchor="after" relative-to-action="GenerateBlocAction"/>
+        </action>
+        <action id="GenerateRepositoryAction"
+                class="com.mkprogs.flutterhelper.actions.repository.GenerateRepositoryAction" text="Repository Interface"
+                description="Generate repository action" icon="/icons/dart.svg">
+            <add-to-group group-id="FlutterGenerator" anchor="after" relative-to-action="GenerateCubitAction"/>
+        </action>
+        <action id="GenerateServiceAction"
+                class="com.mkprogs.flutterhelper.actions.service.GenerateServiceAction" text="Service Interface"
+                description="Generate service action" icon="/icons/dart.svg">
+            <add-to-group group-id="FlutterGenerator" anchor="after" relative-to-action="GenerateCubitAction"/>
+        </action>
+    </actions>
+</idea-plugin>
