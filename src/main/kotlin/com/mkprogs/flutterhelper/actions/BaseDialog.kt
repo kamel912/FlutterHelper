@@ -23,14 +23,13 @@ abstract class BaseDialog(private val dialogTitle: String, private val nameToolT
             row("Name:") {
                 nameTextField()
             }
-
             row {
-                buildContent()!!()
+                buildContent()()
             }
         }
     }
 
-    protected abstract fun buildContent(): JComponent?
+    protected abstract fun buildContent(): JComponent
 
     override fun getPreferredFocusedComponent(): JComponent? = nameTextField
 

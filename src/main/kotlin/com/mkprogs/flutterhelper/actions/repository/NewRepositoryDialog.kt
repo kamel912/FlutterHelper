@@ -1,5 +1,6 @@
 package com.mkprogs.flutterhelper.actions.repository
 
+import com.intellij.ui.layout.panel
 import com.mkprogs.flutterhelper.actions.BaseDialog
 import javax.swing.JComponent
 
@@ -10,7 +11,7 @@ class NewRepositoryDialog(private val generateRepositoryListener: GenerateReposi
         init()
     }
 
-    override fun buildContent(): JComponent? = null
+    override fun buildContent(): JComponent = panel{}
 
 
     override fun doOKAction() {

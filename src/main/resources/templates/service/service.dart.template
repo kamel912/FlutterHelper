@@ -1,0 +1,1 @@
+abstract class ${service_pascal_case}Service {}

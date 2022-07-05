@@ -1,0 +1,5 @@
+import '${service_snake_case}_service.dart';
+
+class ${service_pascal_case}ServiceImpl implements ${service_pascal_case}Service {
+
+}

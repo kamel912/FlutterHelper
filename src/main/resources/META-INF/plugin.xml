@@ -21,6 +21,7 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.java</depends>
 
 
     <!-- Extension points defined by the plugin.
@@ -38,13 +39,15 @@
                           anchor="first"/>
         </group>
         <action id="GenerateBlocAction"
-                class="com.mkprogs.flutterhelper.actions.bloc.GenerateBlocAction" text="Bloc" icon="/icons/bloc.png">
+                description="Generate bloc action"
+                class="com.mkprogs.flutterhelper.actions.bloc.GenerateBlocAction" text="New Bloc" icon="/icons/bloc.png">
             <add-to-group group-id="FlutterGenerator" anchor="first"/>
         </action>
 
         <action id="GenerateCubitAction"
-                class="com.mkprogs.flutterhelper.actions.bloc.GenerateCubitAction" text="Cubit" icon="/icons/cubit.png"
-                description="GenerateCubitAction">
+
+                class="com.mkprogs.flutterhelper.actions.bloc.GenerateCubitAction" text="New Cubit" icon="/icons/cubit.png"
+                description="Generate cubit action">
             <add-to-group group-id="FlutterGenerator" anchor="after" relative-to-action="GenerateBlocAction"/>
         </action>
         <action id="GenerateRepositoryAction"

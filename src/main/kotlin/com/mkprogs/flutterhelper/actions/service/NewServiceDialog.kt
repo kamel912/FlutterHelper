@@ -1,5 +1,6 @@
 package com.mkprogs.flutterhelper.actions.service
 
+import com.intellij.ui.layout.panel
 import com.mkprogs.flutterhelper.actions.BaseDialog
 import javax.swing.JComponent
 
@@ -10,7 +11,7 @@ class NewServiceDialog(private val generateServiceListener: GenerateServiceListe
         init()
     }
 
-    override fun buildContent(): JComponent? = null
+    override fun buildContent(): JComponent = panel{}
 
     override fun doOKAction() {
         super.doOKAction()

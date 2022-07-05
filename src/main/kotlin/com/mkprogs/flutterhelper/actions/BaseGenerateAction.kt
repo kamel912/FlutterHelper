@@ -1,10 +1,9 @@
 package com.mkprogs.flutterhelper.actions
 
-import com.fleshgrinder.extensions.kotlin.toUpperCamelCase
+import com.intellij.lang.java.JavaLanguage
 import com.intellij.openapi.actionSystem.*
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.command.CommandProcessor
-import com.intellij.openapi.fileTypes.PlainTextLanguage
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiDocumentManager
@@ -56,7 +55,7 @@ abstract class BaseGenerateAction<T : BaseGenerator> : AnAction() {
             return
         }
         val psiFile = PsiFileFactory.getInstance(project)
-            .createFileFromText(fileName, PlainTextLanguage.INSTANCE, generator.generate())
+            .createFileFromText(fileName, JavaLanguage.INSTANCE, generator.generate())
         directory.add(psiFile)
     }
 
