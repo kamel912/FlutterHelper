@@ -37,9 +37,11 @@ tasks {
     }
 
     signPlugin {
-        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-        privateKey.set(System.getenv("PRIVATE_KEY"))
-        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
+        val system = System.getenv()
+        certificateChain.set(File(system["CERTIFICATE_CHAIN"]!!).readText())
+        privateKeyFile.set(system["PRIVATE_KEY_FILE"]?.let { File(it) })
+        privateKey.set(File(system["PRIVATE_KEY"]!!).readText())
+        password.set(system["PRIVATE_KEY_PASSWORD"])
     }
 
     publishPlugin {
