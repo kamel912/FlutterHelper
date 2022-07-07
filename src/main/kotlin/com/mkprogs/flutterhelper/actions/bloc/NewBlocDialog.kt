@@ -8,7 +8,7 @@ import javax.swing.JComponent
 
 
 class NewBlocDialog(
-    private val generateBlocListener: GenerateBlocListener,
+    private val listener: GenerateBlocListener,
     dialogTitle: String,
     toolTipText: String
 ) :
@@ -23,7 +23,7 @@ class NewBlocDialog(
 
     override fun doOKAction() {
         super.doOKAction()
-        generateBlocListener.onGenerateBlocClicked(
+        listener.onGenerateBlocClicked(
             nameTextField.text,
             useEquatableCheckBox.isSelected,
             useFreezedCheckBox.isSelected,

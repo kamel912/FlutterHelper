@@ -14,7 +14,7 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Used for generate flutter code templates
+        Used for generate flutter code templates
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
@@ -34,7 +34,7 @@
         <group id="FlutterGenerator"
                text="Flutter Generators"
                popup="true"
-               icon="/icons/flutter.svg">
+               icon="/icons/pluginIcon.svg">
             <add-to-group group-id="NewGroup"
                           anchor="first"/>
         </group>
@@ -58,7 +58,12 @@
         <action id="GenerateServiceAction"
                 class="com.mkprogs.flutterhelper.actions.service.GenerateServiceAction" text="Service Interface"
                 description="Generate service action" icon="/icons/dart.svg">
-            <add-to-group group-id="FlutterGenerator" anchor="after" relative-to-action="GenerateCubitAction"/>
+            <add-to-group group-id="FlutterGenerator" anchor="after" relative-to-action="GenerateRepositoryAction"/>
+        </action>
+        <action id="GenerateFreezedAction"
+                class="com.mkprogs.flutterhelper.actions.freezed.GenerateFreezedAction" text="Freezed Class"
+                description="Generate service action" icon="/icons/dart.svg">
+            <add-to-group group-id="FlutterGenerator" anchor="after" relative-to-action="GenerateServiceAction"/>
         </action>
     </actions>
 </idea-plugin>

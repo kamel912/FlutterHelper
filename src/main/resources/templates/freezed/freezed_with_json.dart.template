@@ -1,0 +1,14 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part '${freezed_snake_case}.freezed.dart';
+part '${freezed_snake_case}.g.dart';
+
+
+
+@freezed
+class ${freezed_pascal_case} with _${freezed_dollar_sign_case} {
+
+       const factory ${freezed_pascal_case}() = _${freezed_pascal_case};
+
+       factory ${freezed_pascal_case}.fromJson(Map<String, dynamic> json) = _${freezed_dollar_sign_case}FromJson(json);
+}

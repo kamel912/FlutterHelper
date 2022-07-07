@@ -2,18 +2,18 @@
 
 ![dialog](https://raw.githubusercontent.com/kamel912/FlutterHelper/master/assets/snapshot.png)
 
-## Introduction
+## - Introduction
 
-Flutter Helper plugin for [IntelliJ](https://www.jetbrains.com/idea/) and [Android Studio](https://developer.android.com/studio/) with support for the [Bloc Library](https://bloclibrary.dev), [Equatable](https://github.com/felangel/equatable) and [Freezed Library](https://pub.dev/packages/freezed) for creating Blocs, Cubits and Service/Repository interfaces  for [Flutter](https://flutter.dev/) apps.
+[Flutter Helper](https://plugins.jetbrains.com/plugin/19484-flutter-helper) plugin for [IntelliJ](https://www.jetbrains.com/idea/) and [Android Studio](https://developer.android.com/studio/) with support for the [Bloc](https://bloclibrary.dev), [Equatable](https://github.com/felangel/equatable) and [Freezed](https://pub.dev/packages/freezed)  libraries for creating Blocs, Cubits and Service/Repository interfaces  for [Flutter](https://flutter.dev/) apps.
 
-## Installation
+## - Installation
 
-[//]: # (You can find the plugin in the official IntelliJ and Android Studio marketplace:)
+You can find the plugin in the official IntelliJ and Android Studio marketplace:
 
-[//]: # ()
-[//]: # (- [Bloc]&#40;https://plugins.jetbrains.com/plugin/12129-bloc&#41;)
 
-### How to use
+- [Flutter Helper](https://plugins.jetbrains.com/plugin/19484-flutter-helper)
+
+## - How to use
 
 Right-click on the desired directory Project view, go to `New -> Flutter Generators -> Bloc`, give it a name, select other options, and click on `OK` to see all the boilerplate generated.
 
@@ -114,8 +114,7 @@ Right-click on the desired directory Project view, go to `New -> Flutter Generat
 
 [//]: # (| `fevent`     | Creates a sub event                                |)
 
-[//]: # ()
-[//]: # (## Deployment)
 
-[//]: # ()
-[//]: # (Using [Plugin Repository]&#40;http://www.jetbrains.org/intellij/sdk/docs/plugin_repository/index.html&#41;)
+## - Deployment
+
+Using [Plugin Repository](http://www.jetbrains.org/intellij/sdk/docs/plugin_repository/index.html)

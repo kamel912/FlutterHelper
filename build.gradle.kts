@@ -37,11 +37,10 @@ tasks {
     }
 
     signPlugin {
-        val system = System.getenv()
-        certificateChain.set(File(system["CERTIFICATE_CHAIN"]!!).readText())
-        privateKeyFile.set(system["PRIVATE_KEY_FILE"]?.let { File(it) })
-        privateKey.set(File(system["PRIVATE_KEY"]!!).readText())
-        password.set(system["PRIVATE_KEY_PASSWORD"])
+        certificateChain.set(System.getenv("CERTIFICATE_CHAIN")?.let {File(it).readText()})
+        privateKeyFile.set(System.getenv("PRIVATE_KEY_FILE")?.let { File(it) })
+        privateKey.set(System.getenv("PRIVATE_KEY_FILE")?.let {File(it).readText()})
+        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
     }
 
     publishPlugin {
@@ -50,6 +49,7 @@ tasks {
     runIde {
 
 //        ideDir.set(file("C:\\Program Files\\Android\\Android Studio"))
+        ideDir.set(file("D:\\Jet Brains\\ideaIC"))
         jvmArgs("--add-exports", "java.base/jdk.internal.vm=ALL-UNNAMED")
     }
 }

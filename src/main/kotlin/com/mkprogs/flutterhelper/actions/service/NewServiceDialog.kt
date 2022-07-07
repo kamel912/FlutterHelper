@@ -4,7 +4,7 @@ import com.intellij.ui.layout.panel
 import com.mkprogs.flutterhelper.actions.BaseDialog
 import javax.swing.JComponent
 
-class NewServiceDialog(private val generateServiceListener: GenerateServiceListener) :
+class NewServiceDialog(private val listener: GenerateServiceListener) :
     BaseDialog("Service", "Service name goes here (e.g. Network)") {
 
     init {
@@ -15,7 +15,7 @@ class NewServiceDialog(private val generateServiceListener: GenerateServiceListe
 
     override fun doOKAction() {
         super.doOKAction()
-        generateServiceListener.onGenerateServiceClicked(
+        listener.onGenerateServiceClicked(
             nameTextField.text
         )
     }

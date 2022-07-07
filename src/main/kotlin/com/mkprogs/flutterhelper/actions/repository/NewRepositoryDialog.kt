@@ -4,7 +4,7 @@ import com.intellij.ui.layout.panel
 import com.mkprogs.flutterhelper.actions.BaseDialog
 import javax.swing.JComponent
 
-class NewRepositoryDialog(private val generateRepositoryListener: GenerateRepositoryListener) :
+class NewRepositoryDialog(private val listener: GenerateRepositoryListener) :
     BaseDialog("", "Repository name goes here (e.g. User)") {
 
     init {
@@ -16,7 +16,7 @@ class NewRepositoryDialog(private val generateRepositoryListener: GenerateReposi
 
     override fun doOKAction() {
         super.doOKAction()
-        generateRepositoryListener.onGenerateRepositoryClicked(
+        listener.onGenerateRepositoryClicked(
             nameTextField.text
         )
     }
