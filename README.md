@@ -1,6 +1,6 @@
 # Flutter Helper Plugin for IntelliJ and Android Studio
 
-![dialog](https://raw.githubusercontent.com/kamel912/FlutterHelper/master/assets/snapshot.png)
+![snapshot](https://raw.githubusercontent.com/kamel912/FlutterHelper/master/assets/snapshot.png)
 
 ## - Introduction
 

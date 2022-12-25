@@ -46,9 +46,16 @@ tasks {
     publishPlugin {
         token.set(System.getenv("PUBLISH_TOKEN"))
     }
+
+    buildSearchableOptions {
+        enabled = false
+    }
+
+
     runIde {
 
 //        ideDir.set(file("C:\\Program Files\\Android\\Android Studio"))
+        autoReloadPlugins.set(true)
         ideDir.set(file("D:\\Jet Brains\\ideaIC"))
         jvmArgs("--add-exports", "java.base/jdk.internal.vm=ALL-UNNAMED")
     }
