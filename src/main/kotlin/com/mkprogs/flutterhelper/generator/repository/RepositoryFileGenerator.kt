@@ -2,12 +2,12 @@ package com.mkprogs.flutterhelper.generator.repository
 
 import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
 import com.fleshgrinder.extensions.kotlin.toUpperCamelCase
-import com.mkprogs.flutterhelper.generator.BaseGenerator
+import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
-abstract class RepositoryGenerator(
+abstract class RepositoryFileGenerator(
     private val name: String,
     templateName: String
-) : BaseGenerator(
+) : BaseFileGenerator(
     templateName,
    "repository"
 ) {

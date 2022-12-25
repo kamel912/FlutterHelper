@@ -27,6 +27,8 @@
     <change-notes>
         <![CDATA[
             <ul>
+                <li>v1.0.1: Fix generated freezed file name</li>
+                <li>v1.0.1: Fix generated freezed fromJson constructor</li>
                 <li>v1.0.0: Add freezed class generation</li>
             </ul>
 

@@ -2,14 +2,14 @@ package com.mkprogs.flutterhelper.generator.bloc
 
 import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
 import com.fleshgrinder.extensions.kotlin.toUpperCamelCase
-import com.mkprogs.flutterhelper.generator.BaseGenerator
+import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
-abstract class BlocGenerator(
+abstract class BlocFileGenerator(
     private val name: String,
     useEquatable: Boolean,
     useFreezed: Boolean,
     templateName: String
-) : BaseGenerator(
+) : BaseFileGenerator(
     templateName,
     if (useFreezed) "bloc_with_freezed" else if (useEquatable) "bloc_with_equatable" else "bloc"
 ) {

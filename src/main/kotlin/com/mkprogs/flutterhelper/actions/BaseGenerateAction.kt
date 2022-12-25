@@ -8,9 +8,9 @@ import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiFileFactory
-import com.mkprogs.flutterhelper.generator.BaseGenerator
+import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
-abstract class BaseGenerateAction<T : BaseGenerator> : AnAction() {
+abstract class BaseGenerateAction<T : BaseFileGenerator> : AnAction() {
 
     private lateinit var dataContext: DataContext
 

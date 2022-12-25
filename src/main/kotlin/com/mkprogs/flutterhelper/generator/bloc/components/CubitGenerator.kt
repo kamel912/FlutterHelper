@@ -1,11 +1,11 @@
 package com.mkprogs.flutterhelper.generator.bloc.components
 
-import com.mkprogs.flutterhelper.generator.bloc.CubitGenerator
+import com.mkprogs.flutterhelper.generator.bloc.CubitFileGenerator
 
 class CubitGenerator(
         name: String,
         useEquatable: Boolean,
         useFreezed: Boolean
-) : CubitGenerator(name, useEquatable, useFreezed, templateName = "cubit") {
+) : CubitFileGenerator(name, useEquatable, useFreezed, templateName = "cubit") {
     override fun fileName() = "${snakeCase()}_cubit.${fileExtension()}"
 }

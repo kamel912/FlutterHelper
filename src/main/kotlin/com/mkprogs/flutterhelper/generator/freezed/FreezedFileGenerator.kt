@@ -2,12 +2,12 @@ package com.mkprogs.flutterhelper.generator.freezed
 
 import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
 import com.fleshgrinder.extensions.kotlin.toUpperCamelCase
-import com.mkprogs.flutterhelper.generator.BaseGenerator
+import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
-abstract class FreezedGenerator(
+abstract class FreezedFileGenerator(
     private val name: String,
     templateName: String
-) : BaseGenerator(
+) : BaseFileGenerator(
     templateName,
    "freezed"
 ) {

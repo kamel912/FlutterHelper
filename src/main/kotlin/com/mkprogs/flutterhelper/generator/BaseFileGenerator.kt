@@ -4,7 +4,7 @@ import com.google.common.io.CharStreams
 import org.apache.commons.lang.text.StrSubstitutor
 import java.io.InputStreamReader
 
-abstract class BaseGenerator(
+abstract class BaseFileGenerator(
     templateName: String,
     templateFolder: String,
 ) {

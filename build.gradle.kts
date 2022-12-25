@@ -7,7 +7,7 @@ plugins {
 
 
 group = "com.mkprogs"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -33,7 +33,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("212")
-        untilBuild.set("222.*")
+        untilBuild.set("223.*")
     }
 
     signPlugin {
@@ -56,12 +56,19 @@ tasks {
 
 //        ideDir.set(file("C:\\Program Files\\Android\\Android Studio"))
         autoReloadPlugins.set(true)
-        ideDir.set(file("D:\\Jet Brains\\ideaIC"))
+//        ideDir.set(file("D:\\Jet Brains\\ideaIC"))
         jvmArgs("--add-exports", "java.base/jdk.internal.vm=ALL-UNNAMED")
     }
 }
 
 
+tasks.test {
+    useJUnitPlatform()
+}
+
+
 dependencies{
     implementation("com.fleshgrinder.kotlin:case-format:0.2.0")
+    testImplementation(kotlin("test"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.0")
 }

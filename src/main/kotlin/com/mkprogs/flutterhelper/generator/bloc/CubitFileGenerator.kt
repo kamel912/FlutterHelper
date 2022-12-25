@@ -2,14 +2,14 @@ package com.mkprogs.flutterhelper.generator.bloc
 
 import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
 import com.fleshgrinder.extensions.kotlin.toUpperCamelCase
-import com.mkprogs.flutterhelper.generator.BaseGenerator
+import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
-abstract class CubitGenerator(
+abstract class CubitFileGenerator(
     private val name: String,
     useEquatable: Boolean,
     useFreezed: Boolean,
     templateName: String
-) : BaseGenerator(
+) : BaseFileGenerator(
     templateName,
     if (useFreezed) "cubit_with_freezed" else if (useEquatable) "cubit_with_equatable" else "cubit"
 ) {

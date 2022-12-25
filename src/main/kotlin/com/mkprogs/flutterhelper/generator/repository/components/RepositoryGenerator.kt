@@ -1,10 +1,10 @@
 package com.mkprogs.flutterhelper.generator.repository.components
 
-import com.mkprogs.flutterhelper.generator.repository.RepositoryGenerator
+import com.mkprogs.flutterhelper.generator.repository.RepositoryFileGenerator
 
 class RepositoryGenerator(
     name: String,
-) : RepositoryGenerator(name, templateName = "repository") {
+) : RepositoryFileGenerator(name, templateName = "repository") {
 
     override fun fileName() = "${snakeCase()}_repository.${fileExtension()}"
 

@@ -10,5 +10,5 @@ class ${freezed_pascal_case} with _${freezed_dollar_sign_case} {
 
        const factory ${freezed_pascal_case}() = _${freezed_pascal_case};
 
-       factory ${freezed_pascal_case}.fromJson(Map<String, dynamic> json) = _${freezed_dollar_sign_case}FromJson(json);
+       factory ${freezed_pascal_case}.fromJson(Map<String, dynamic> json) => _${freezed_dollar_sign_case}FromJson(json);
 }

@@ -2,12 +2,12 @@ package com.mkprogs.flutterhelper.generator.service
 
 import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
 import com.fleshgrinder.extensions.kotlin.toUpperCamelCase
-import com.mkprogs.flutterhelper.generator.BaseGenerator
+import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
-abstract class ServiceGenerator(
+abstract class ServiceFileGenerator(
     private val name: String,
     templateName: String
-) : BaseGenerator(
+) : BaseFileGenerator(
     templateName,
    "service"
 ) {
