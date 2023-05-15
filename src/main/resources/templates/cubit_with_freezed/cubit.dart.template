@@ -5,5 +5,5 @@ part '${cubit_snake_case}_state.dart';
 part '${cubit_snake_case}.freezed.dart';
 
 class ${cubit_pascal_case}Cubit extends Cubit<${cubit_pascal_case}State> {
-  ${cubit_pascal_case}Cubit() : super(${cubit_pascal_case}Initial());
+  ${cubit_pascal_case}Cubit() : super(const ${cubit_pascal_case}Initial());
 }

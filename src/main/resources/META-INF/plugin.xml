@@ -27,6 +27,7 @@
     <change-notes>
         <![CDATA[
             <ul>
+                <li>v1.0.3: Fix freezed event constructor</li>
                 <li>v1.0.2: Fix freezed separator encoding</li>
                 <li>v1.0.1: Fix generated freezed file name</li>
                 <li>v1.0.1: Fix generated freezed fromJson constructor</li>
