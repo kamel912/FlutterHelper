@@ -5,7 +5,7 @@ import com.intellij.ui.layout.panel
 import javax.swing.JComponent
 import javax.swing.JTextField
 
-abstract class BaseDialog(private val dialogTitle: String, private val nameToolTipText: String, ) : DialogWrapper(null) {
+abstract class BaseDialog(dialogTitle: String, private val nameToolTipText: String, ) : DialogWrapper(null) {
 
 
     lateinit var nameTextField: JTextField

@@ -5,7 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '${bloc_snake_case}_event.dart';
 part '${bloc_snake_case}_state.dart';
-part '${bloc_snake_case}.freezed.dart';
+part '${bloc_snake_case}_bloc.freezed.dart';
 
 
 class ${bloc_pascal_case}Bloc extends Bloc<${bloc_pascal_case}Event, ${bloc_pascal_case}State> {
