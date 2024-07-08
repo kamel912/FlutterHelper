@@ -1,7 +1,7 @@
 package com.mkprogs.flutterhelper.generator.freezed
 
-import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
-import com.fleshgrinder.extensions.kotlin.toUpperCamelCase
+import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
+import com.mkprogs.flutterhelper.helpers.toUpperCamelCase
 import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
 abstract class FreezedFileGenerator(

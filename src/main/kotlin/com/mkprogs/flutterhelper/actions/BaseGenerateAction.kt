@@ -60,4 +60,7 @@ abstract class BaseGenerateAction<T : BaseFileGenerator> : AnAction() {
     }
 
 
+    override fun getActionUpdateThread(): ActionUpdateThread {
+        return ActionUpdateThread.EDT
+    }
 }

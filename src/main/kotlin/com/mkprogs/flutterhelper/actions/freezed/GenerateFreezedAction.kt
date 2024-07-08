@@ -1,6 +1,6 @@
 package com.mkprogs.flutterhelper.actions.freezed
 
-import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
+import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.mkprogs.flutterhelper.actions.BaseGenerateAction
 import com.mkprogs.flutterhelper.generator.freezed.FreezedFileGenerator

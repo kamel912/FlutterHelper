@@ -1,6 +1,6 @@
 package com.mkprogs.flutterhelper.actions.bloc
 
-import com.intellij.ui.layout.panel
+import com.intellij.ui.dsl.builder.panel
 import com.mkprogs.flutterhelper.actions.BaseDialog
 import java.awt.event.ActionListener
 import javax.swing.JCheckBox
@@ -51,13 +51,13 @@ class NewBlocDialog(
         useFreezedCheckBox.addActionListener(actionListener)
         useEquatableCheckBox.addActionListener(actionListener)
         return panel {
-            titledRow("Options:") {
+            group("Options:") {
                 row("Operator:") {
-                    useFreezedCheckBox()
-                    useEquatableCheckBox()
+                    cell(useFreezedCheckBox)
+                    cell(useEquatableCheckBox)
                 }
                 row("Folder:") {
-                    useFolderCheckBox()
+                    cell(useFolderCheckBox)
 
                 }
             }

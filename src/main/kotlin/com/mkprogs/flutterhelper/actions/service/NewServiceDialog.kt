@@ -1,6 +1,6 @@
 package com.mkprogs.flutterhelper.actions.service
 
-import com.intellij.ui.layout.panel
+import com.intellij.ui.dsl.builder.panel
 import com.mkprogs.flutterhelper.actions.BaseDialog
 import javax.swing.JComponent
 

@@ -1,9 +1,10 @@
 package com.mkprogs.flutterhelper.actions.freezed
 
-import com.intellij.ui.layout.panel
+import com.intellij.ui.dsl.builder.panel
 import com.mkprogs.flutterhelper.actions.BaseDialog
 import javax.swing.JCheckBox
 import javax.swing.JComponent
+
 
 class NewFreezedDialog(private val listener: GenerateFreezedListener) :
     BaseDialog("Freezed Class", "Freezed Class name goes here (e.g. User)") {
@@ -32,12 +33,12 @@ class NewFreezedDialog(private val listener: GenerateFreezedListener) :
         useFolderCheckBox = JCheckBox().apply {
             text = "Use Folder"
         }
-        return panel {
-            row {
-                useJsonCheckBox()
-                useFolderCheckBox()
-            }
 
+        return panel{
+            row {
+                cell(useJsonCheckBox)
+                cell(useFolderCheckBox)
+            }
         }
     }
 
