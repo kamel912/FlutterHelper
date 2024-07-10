@@ -1,15 +1,15 @@
 package com.mkprogs.flutterhelper.generator.repository
 
+import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
 import com.mkprogs.flutterhelper.helpers.toUpperCamelCase
-import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
 abstract class RepositoryFileGenerator(
     private val name: String,
     templateName: String
 ) : BaseFileGenerator(
     templateName,
-   "repository"
+    "repository"
 ) {
 
     private val templateRepositoryPascalCase = "repository_pascal_case"

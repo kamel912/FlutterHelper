@@ -44,5 +44,4 @@ abstract class BaseFileGenerator(
     fun fileExtension() = "dart"
 
 
-
 }

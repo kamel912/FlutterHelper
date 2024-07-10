@@ -14,7 +14,7 @@ class GenerateRepositoryAction : BaseGenerateAction<RepositoryFileGenerator>(), 
     override fun onGenerateRepositoryClicked(name: String?) {
         name?.let {
             val generators = RepositoryFileGeneratorFactory.getRepositoryGenerators(it)
-            generate(generators, "Repository" , true, "${name.toLowerSnakeCase()}_repository")
+            generate(generators, "Repository", true, "${name.toLowerSnakeCase()}_repository")
         }
     }
 }

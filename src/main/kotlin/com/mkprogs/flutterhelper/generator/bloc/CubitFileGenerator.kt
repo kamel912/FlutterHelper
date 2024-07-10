@@ -1,17 +1,17 @@
 package com.mkprogs.flutterhelper.generator.bloc
 
+import com.mkprogs.flutterhelper.actions.bloc.EqualityType
+import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
 import com.mkprogs.flutterhelper.helpers.toUpperCamelCase
-import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
 abstract class CubitFileGenerator(
     private val name: String,
-    useEquatable: Boolean,
-    useFreezed: Boolean,
+    equalityType: EqualityType,
     templateName: String
 ) : BaseFileGenerator(
     templateName,
-    if (useFreezed) "cubit_with_freezed" else if (useEquatable) "cubit_with_equatable" else "cubit"
+    if (equalityType == EqualityType.FREEZED) "cubit_with_freezed" else if (equalityType == EqualityType.EQUITABLE) "cubit_with_equatable" else "cubit"
 ) {
 
     private val templateCubitPascalCase = "cubit_pascal_case"

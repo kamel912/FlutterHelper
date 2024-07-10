@@ -1,15 +1,15 @@
 package com.mkprogs.flutterhelper.generator.service
 
+import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
 import com.mkprogs.flutterhelper.helpers.toUpperCamelCase
-import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
 abstract class ServiceFileGenerator(
     private val name: String,
     templateName: String
 ) : BaseFileGenerator(
     templateName,
-   "service"
+    "service"
 ) {
 
     private val templateServicePascalCase = "service_pascal_case"

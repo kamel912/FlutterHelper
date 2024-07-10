@@ -11,9 +11,9 @@ class GenerateBlocAction : BaseGenerateAction<BlocFileGenerator>(),
         NewBlocDialog(this, "Bloc", "Bloc name goes here (e.g. Login)").showAndGet()
     }
 
-    override fun onGenerateBlocClicked(name: String?, useEquatable: Boolean, useFreezed: Boolean, useFolder: Boolean) {
+    override fun onGenerateBlocClicked(name: String?, equalityType: EqualityType, useFolder: Boolean) {
         name?.let {
-            val generators = BlocFileGeneratorFactory.getBlocGenerators(it, useEquatable, useFreezed)
+            val generators = BlocFileGeneratorFactory.getBlocGenerators(it, equalityType)
             generate(generators, "Bloc", useFolder, "bloc")
         }
     }

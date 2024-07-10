@@ -8,13 +8,13 @@ import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
 
 class GenerateServiceAction : BaseGenerateAction<ServiceFileGenerator>(), GenerateServiceListener {
     override fun actionPerformed(e: AnActionEvent) {
-        NewServiceDialog(this, ).showAndGet()
+        NewServiceDialog(this).showAndGet()
     }
 
     override fun onGenerateServiceClicked(name: String?) {
         name?.let {
             val generators = ServiceFileGeneratorFactory.getServiceGenerators(it)
-            generate(generators, "Service" , true, "${name.toLowerSnakeCase()}_service")
+            generate(generators, "Service", true, "${name.toLowerSnakeCase()}_service")
         }
     }
 }

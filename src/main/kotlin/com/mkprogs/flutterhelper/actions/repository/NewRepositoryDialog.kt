@@ -11,13 +11,13 @@ class NewRepositoryDialog(private val listener: GenerateRepositoryListener) :
         init()
     }
 
-    override fun buildContent(): JComponent = panel{}
+    override fun buildContent(): JComponent = panel {}
 
 
     override fun doOKAction() {
         super.doOKAction()
         listener.onGenerateRepositoryClicked(
-            nameTextField.text
+            name
         )
     }
 }

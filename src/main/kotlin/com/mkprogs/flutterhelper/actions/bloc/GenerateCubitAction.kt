@@ -12,10 +12,10 @@ class GenerateCubitAction : BaseGenerateAction<CubitFileGenerator>(), GenerateBl
         dialog.showAndGet()
     }
 
-    override fun onGenerateBlocClicked(name: String?, useEquatable: Boolean, useFreezed: Boolean, useFolder: Boolean) {
+    override fun onGenerateBlocClicked(name: String?, equalityType: EqualityType, useFolder: Boolean) {
         name?.let {
-            val generators = CubitFileGeneratorFactory.getCubitGenerators(it, useEquatable, useFreezed)
-            generate(generators,"Cubit", useFolder, "cubit")
+            val generators = CubitFileGeneratorFactory.getCubitGenerators(it, equalityType)
+            generate(generators, "Cubit", useFolder, "cubit")
         }
     }
 }

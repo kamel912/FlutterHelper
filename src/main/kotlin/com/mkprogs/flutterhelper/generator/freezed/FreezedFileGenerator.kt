@@ -1,15 +1,15 @@
 package com.mkprogs.flutterhelper.generator.freezed
 
+import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
 import com.mkprogs.flutterhelper.helpers.toUpperCamelCase
-import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
 abstract class FreezedFileGenerator(
     private val name: String,
     templateName: String
 ) : BaseFileGenerator(
     templateName,
-   "freezed"
+    "freezed"
 ) {
 
     private val templateFreezedPascalCase = "freezed_pascal_case"

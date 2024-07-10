@@ -2,8 +2,6 @@ package com.mkprogs.flutterhelper.actions.bloc
 
 import com.intellij.ui.dsl.builder.panel
 import com.mkprogs.flutterhelper.actions.BaseDialog
-import java.awt.event.ActionListener
-import javax.swing.JCheckBox
 import javax.swing.JComponent
 
 
@@ -13,9 +11,9 @@ class NewBlocDialog(
     toolTipText: String
 ) :
     BaseDialog(dialogTitle, toolTipText) {
-    private lateinit var useFreezedCheckBox: JCheckBox
-    private lateinit var useEquatableCheckBox: JCheckBox
-    private lateinit var useFolderCheckBox: JCheckBox
+    private var equalityType: EqualityType = EqualityType.INITIAL
+    private var useFolder: Boolean = false
+
 
     init {
         init()
@@ -24,46 +22,47 @@ class NewBlocDialog(
     override fun doOKAction() {
         super.doOKAction()
         listener.onGenerateBlocClicked(
-            nameTextField.text,
-            useEquatableCheckBox.isSelected,
-            useFreezedCheckBox.isSelected,
-            useFolderCheckBox.isSelected
+            name,
+            equalityType,
+            useFolder,
         )
     }
 
 
     override fun buildContent(): JComponent {
-        useFreezedCheckBox = JCheckBox().apply {
-            text = "Use Freezed"
-        }
-        useEquatableCheckBox = JCheckBox().apply {
-            text = "Use Equatable"
-        }
-        useFolderCheckBox = JCheckBox().apply {
-            text = "Use Folder"
-        }
 
-        val actionListener = ActionListener {
-            useFreezedCheckBox.isEnabled = !useEquatableCheckBox.isSelected
-            useEquatableCheckBox.isEnabled = !useFreezedCheckBox.isSelected
-        }
 
-        useFreezedCheckBox.addActionListener(actionListener)
-        useEquatableCheckBox.addActionListener(actionListener)
         return panel {
             group("Options:") {
-                row("Operator:") {
-                    cell(useFreezedCheckBox)
-                    cell(useEquatableCheckBox)
+                buttonsGroup("Operator:") {
+                    row {
+                        radioButton("Use freezed")
+                            .onChanged { component ->
+                                run {
+                                    if (component.isSelected) equalityType = EqualityType.FREEZED
+                                }
+                            }
+                    }
+                    row {
+                        radioButton("Use equatable")
+                            .onChanged { component ->
+                                run {
+                                    if (component.isSelected) equalityType = EqualityType.EQUITABLE
+                                }
+                            }
+                    }
                 }
                 row("Folder:") {
-                    cell(useFolderCheckBox)
+                    checkBox("Use folder").onChanged { value ->
+                        run {
+                            useFolder = value.isSelected
 
+                        }
+                    }
                 }
             }
         }
     }
 
 
-    override fun getPreferredFocusedComponent(): JComponent = nameTextField
 }

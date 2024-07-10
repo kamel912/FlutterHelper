@@ -1,5 +1,5 @@
 package com.mkprogs.flutterhelper.actions.repository
 
-interface GenerateRepositoryListener{
+interface GenerateRepositoryListener {
     fun onGenerateRepositoryClicked(name: String?)
 }

@@ -8,9 +8,8 @@ import javax.swing.JComponent
 
 class NewFreezedDialog(private val listener: GenerateFreezedListener) :
     BaseDialog("Freezed Class", "Freezed Class name goes here (e.g. User)") {
-    private lateinit var useJsonCheckBox: JCheckBox
-    private lateinit var useFolderCheckBox: JCheckBox
-
+    private var useJson: Boolean = false
+    private var useFolder: Boolean = false
 
     init {
         init()
@@ -20,24 +19,24 @@ class NewFreezedDialog(private val listener: GenerateFreezedListener) :
         super.doOKAction()
 
         listener.onGenerateFreezedClicked(
-            nameTextField.text,
-            useJsonCheckBox.isSelected,
-            useFolderCheckBox.isSelected,
+            name,
+            useJson,
+            useFolder,
         )
     }
 
     override fun buildContent(): JComponent {
-        useJsonCheckBox = JCheckBox().apply {
-            text = "Add fromJson"
-        }
-        useFolderCheckBox = JCheckBox().apply {
-            text = "Use Folder"
-        }
 
-        return panel{
+        return panel {
             row {
-                cell(useJsonCheckBox)
-                cell(useFolderCheckBox)
+                checkBox("Add fromJson")
+                    .onChanged { component ->
+                        useJson = component.isSelected
+                    }
+                checkBox("Use folder")
+                    .onChanged { component ->
+                        useFolder = component.isSelected
+                    }
             }
         }
     }

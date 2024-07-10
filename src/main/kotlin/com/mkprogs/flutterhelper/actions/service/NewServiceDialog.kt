@@ -11,12 +11,12 @@ class NewServiceDialog(private val listener: GenerateServiceListener) :
         init()
     }
 
-    override fun buildContent(): JComponent = panel{}
+    override fun buildContent(): JComponent = panel {}
 
     override fun doOKAction() {
         super.doOKAction()
         listener.onGenerateServiceClicked(
-            nameTextField.text
+            name
         )
     }
 }

@@ -1,17 +1,17 @@
 package com.mkprogs.flutterhelper.generator.bloc
 
+import com.mkprogs.flutterhelper.actions.bloc.EqualityType
+import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
 import com.mkprogs.flutterhelper.helpers.toUpperCamelCase
-import com.mkprogs.flutterhelper.generator.BaseFileGenerator
 
 abstract class BlocFileGenerator(
     private val name: String,
-    useEquatable: Boolean,
-    useFreezed: Boolean,
+    equalityType: EqualityType,
     templateName: String
 ) : BaseFileGenerator(
     templateName,
-    if (useFreezed) "bloc_with_freezed" else if (useEquatable) "bloc_with_equatable" else "bloc"
+    if (equalityType == EqualityType.FREEZED) "bloc_with_freezed" else if (equalityType == EqualityType.EQUITABLE) "bloc_with_equatable" else "bloc"
 ) {
 
     private val templateBlocPascalCase = "bloc_pascal_case"
