@@ -1,5 +1,7 @@
 package com.mkprogs.flutterhelper.helpers
 
+import java.util.*
+
 
 fun String.toUpperCamelCase(vararg ignore: Char): String =
     if (this.isEmpty()) this else StringBuilder(this.length).also {
@@ -73,3 +75,4 @@ fun String.toLowerSnakeCase(vararg ignore: Char): String =
     }.toString()
 
 
+fun String.toLowerCase() = this.lowercase(Locale.ENGLISH)

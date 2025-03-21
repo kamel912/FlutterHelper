@@ -5,7 +5,7 @@ import com.mkprogs.flutterhelper.generator.bloc.BlocFileGenerator
 
 class BlocGenerator(
     name: String,
-    equalityType: EqualityType
-) : BlocFileGenerator(name, equalityType, templateName = "bloc") {
+    equalityType: EqualityType,
+) : BlocFileGenerator(name, equalityType, "bloc") {
     override fun fileName() = "${snakeCase()}_bloc.${fileExtension()}"
 }

@@ -1,15 +1,15 @@
 package com.mkprogs.flutterhelper.generator.repository
 
 import com.mkprogs.flutterhelper.generator.BaseFileGenerator
-import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
-import com.mkprogs.flutterhelper.helpers.toUpperCamelCase
 
 abstract class RepositoryFileGenerator(
-    private val name: String,
-    templateName: String
+    fileName: String,
+    templateName: String,
 ) : BaseFileGenerator(
     templateName,
-    "repository"
+    "repository",
+    "Repository",
+    fileName,
 ) {
 
     private val templateRepositoryPascalCase = "repository_pascal_case"
@@ -24,11 +24,6 @@ abstract class RepositoryFileGenerator(
             templateRepositoryDollarSignCase to dollarSignCase()
         )
     }
-
-
-    final override fun pascalCase(): String = name.toUpperCamelCase().replace("Repository", "")
-
-    final override fun snakeCase() = name.toLowerSnakeCase().replace("_repository", "")
 
 
 }

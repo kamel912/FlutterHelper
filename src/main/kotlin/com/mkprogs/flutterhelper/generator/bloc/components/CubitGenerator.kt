@@ -5,7 +5,7 @@ import com.mkprogs.flutterhelper.generator.bloc.CubitFileGenerator
 
 class CubitGenerator(
     name: String,
-    equalityType: EqualityType
-) : CubitFileGenerator(name, equalityType, templateName = "cubit") {
+    equalityType: EqualityType,
+) : CubitFileGenerator(name, equalityType, "cubit") {
     override fun fileName() = "${snakeCase()}_cubit.${fileExtension()}"
 }

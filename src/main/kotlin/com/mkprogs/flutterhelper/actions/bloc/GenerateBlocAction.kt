@@ -8,7 +8,7 @@ import com.mkprogs.flutterhelper.generator.bloc.BlocFileGeneratorFactory
 class GenerateBlocAction : BaseGenerateAction<BlocFileGenerator>(),
     GenerateBlocListener {
     override fun actionPerformed(e: AnActionEvent) {
-        NewBlocDialog(this, "Bloc", "Bloc name goes here (e.g. Login)").showAndGet()
+        NewBlocDialog(this, "Bloc").showAndGet()
     }
 
     override fun onGenerateBlocClicked(name: String?, equalityType: EqualityType, useFolder: Boolean) {

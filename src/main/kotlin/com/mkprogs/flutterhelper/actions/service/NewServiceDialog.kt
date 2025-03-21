@@ -1,22 +1,30 @@
 package com.mkprogs.flutterhelper.actions.service
 
+import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.ui.dsl.builder.panel
-import com.mkprogs.flutterhelper.actions.BaseDialog
+import com.mkprogs.flutterhelper.helpers.dialogTitle
+import com.mkprogs.flutterhelper.helpers.nameField
 import javax.swing.JComponent
 
 class NewServiceDialog(private val listener: GenerateServiceListener) :
-    BaseDialog("Service", "Service name goes here (e.g. Network)") {
+    DialogWrapper(null) {
+    val serviceModel = ServiceModel()
 
     init {
+        title = dialogTitle("Service")
         init()
     }
 
-    override fun buildContent(): JComponent = panel {}
+    override fun createCenterPanel(): JComponent = panel {
+        nameField(serviceModel::name, "Service")
+    }
 
     override fun doOKAction() {
         super.doOKAction()
         listener.onGenerateServiceClicked(
-            name
+            serviceModel.name
         )
     }
+
+    class ServiceModel(var name: String = "")
 }

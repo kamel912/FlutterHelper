@@ -1,68 +1,56 @@
 package com.mkprogs.flutterhelper.actions.bloc
 
+import com.intellij.openapi.ui.DialogWrapper
+import com.intellij.ui.dsl.builder.TopGap
 import com.intellij.ui.dsl.builder.panel
-import com.mkprogs.flutterhelper.actions.BaseDialog
+import com.mkprogs.flutterhelper.helpers.boundCheckBox
+import com.mkprogs.flutterhelper.helpers.dialogTitle
+import com.mkprogs.flutterhelper.helpers.enumGroup
+import com.mkprogs.flutterhelper.helpers.nameField
 import javax.swing.JComponent
-
 
 class NewBlocDialog(
     private val listener: GenerateBlocListener,
-    dialogTitle: String,
-    toolTipText: String
-) :
-    BaseDialog(dialogTitle, toolTipText) {
-    private var equalityType: EqualityType = EqualityType.INITIAL
-    private var useFolder: Boolean = false
+    private val dialogName: String,
+) : DialogWrapper(null) {
 
+    private val blocModel: BlocModel = BlocModel()
 
     init {
+        title = dialogTitle(dialogName)
         init()
     }
 
     override fun doOKAction() {
         super.doOKAction()
         listener.onGenerateBlocClicked(
-            name,
-            equalityType,
-            useFolder,
+            blocModel.name,
+            blocModel.equalityType,
+            blocModel.useFolder,
         )
     }
 
 
-    override fun buildContent(): JComponent {
-
-
-        return panel {
-            group("Options:") {
-                buttonsGroup("Operator:") {
-                    row {
-                        radioButton("Use freezed")
-                            .onChanged { component ->
-                                run {
-                                    if (component.isSelected) equalityType = EqualityType.FREEZED
-                                }
-                            }
-                    }
-                    row {
-                        radioButton("Use equatable")
-                            .onChanged { component ->
-                                run {
-                                    if (component.isSelected) equalityType = EqualityType.EQUITABLE
-                                }
-                            }
-                    }
-                }
-                row("Folder:") {
-                    checkBox("Use folder").onChanged { value ->
-                        run {
-                            useFolder = value.isSelected
-
-                        }
-                    }
-                }
+    override fun createCenterPanel(): JComponent = panel {
+        nameField(blocModel::name, dialogName)
+        group("Options:") {
+            enumGroup<EqualityType>(
+                "Operator:",
+                blocModel::equalityType,
+            )
+            row("Folder:") {
+                boundCheckBox(
+                    blocModel::useFolder,
+                    "Use folder",
+                )
             }
-        }
+        }.topGap(TopGap.NONE)
     }
 
-
+    data class BlocModel(
+        var name: String = "",
+        var equalityType: EqualityType = EqualityType.None,
+        var useFolder: Boolean = false,
+    )
 }
+

@@ -1,7 +1,7 @@
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.9.21"
-    id("org.jetbrains.intellij") version "1.16.1"
+    id("org.jetbrains.intellij") version "1.17.3"
 }
 
 
@@ -15,9 +15,8 @@ repositories {
 
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
-    version.set("2023.1.5")
-    type.set("IC") // Target IDE Platform
-
+    version.set("2024.1.4")
+    type.set("IC")
     plugins.set(listOf("com.intellij.java"))
 }
 
@@ -32,8 +31,8 @@ tasks {
     }
 
     patchPluginXml {
-        sinceBuild.set("231")
-//        untilBuild.set("241.*")
+        sinceBuild.set("241")
+        untilBuild.set("251.*")
     }
 
     signPlugin {
@@ -68,6 +67,7 @@ tasks.test {
 
 
 dependencies{
+    implementation("org.apache.commons:commons-text:1.10.0")
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.0")
 }

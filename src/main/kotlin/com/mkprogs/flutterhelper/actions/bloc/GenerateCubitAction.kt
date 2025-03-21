@@ -8,7 +8,7 @@ import com.mkprogs.flutterhelper.generator.bloc.CubitFileGeneratorFactory
 class GenerateCubitAction : BaseGenerateAction<CubitFileGenerator>(), GenerateBlocListener {
 
     override fun actionPerformed(e: AnActionEvent) {
-        val dialog = NewBlocDialog(this, "Cubit", "Cubit name goes here (e.g. Login)")
+        val dialog = NewBlocDialog(this, "Cubit")
         dialog.showAndGet()
     }
 

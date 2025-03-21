@@ -27,8 +27,7 @@
     <change-notes>
         <![CDATA[
             <ul>
-                <li>v1.0.6: Add support for latest IDE && recreate bloc generator</li>
-                <li>v1.0.5: Add support for latest IDE</li>
+                <li>v1.0.5: Add support for latest IDE && recreate bloc generator</li>
                 <li>v1.0.4: Fix freezed bloc cubit part file name</li>
                 <li>v1.0.3: Fix freezed event constructor</li>
                 <li>v1.0.2: Fix freezed separator encoding</li>
@@ -44,7 +43,7 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
-    <depends>com.intellij.java</depends>
+    <depends>com.intellij.modules.java</depends>
 
 
     <!-- Extension points defined by the plugin.

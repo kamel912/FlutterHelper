@@ -4,7 +4,7 @@ import com.mkprogs.flutterhelper.generator.service.ServiceFileGenerator
 
 class ServiceImplGenerator(
     name: String,
-) : ServiceFileGenerator(name, templateName = "service_impl") {
+) : ServiceFileGenerator(name, "service_impl") {
 
     override fun fileName() = "${snakeCase()}_service_impl.${fileExtension()}"
 

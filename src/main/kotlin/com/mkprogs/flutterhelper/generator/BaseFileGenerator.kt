@@ -1,12 +1,17 @@
 package com.mkprogs.flutterhelper.generator
 
 import com.google.common.io.CharStreams
-import org.apache.commons.lang.text.StrSubstitutor
+import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
+import com.mkprogs.flutterhelper.helpers.toUpperCamelCase
+import org.apache.commons.text.StringSubstitutor
 import java.io.InputStreamReader
+import java.util.*
 
 abstract class BaseFileGenerator(
     templateName: String,
     templateFolder: String,
+    private val typeName: String,
+    private val name: String,
 ) {
 
 
@@ -17,7 +22,7 @@ abstract class BaseFileGenerator(
     lateinit var templateValues: MutableMap<String, String>
 
     fun generate(): String {
-        val substitutor = StrSubstitutor(templateValues)
+        val substitutor = StringSubstitutor(templateValues)
         return substitutor.replace(templateString)
     }
 
@@ -34,9 +39,9 @@ abstract class BaseFileGenerator(
     }
 
 
-    abstract fun pascalCase(): String
+    fun pascalCase(): String = name.toUpperCamelCase().replace(typeName, "")
 
-    abstract fun snakeCase(): String
+    fun snakeCase(): String = name.toLowerSnakeCase().replace("_${typeName.lowercase(Locale.ENGLISH)}", "")
 
 
     fun dollarSignCase(): String = "$${pascalCase()}"

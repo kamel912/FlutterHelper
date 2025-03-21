@@ -2,16 +2,20 @@ package com.mkprogs.flutterhelper.generator.bloc
 
 import com.mkprogs.flutterhelper.actions.bloc.EqualityType
 import com.mkprogs.flutterhelper.generator.BaseFileGenerator
-import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
-import com.mkprogs.flutterhelper.helpers.toUpperCamelCase
 
 abstract class BlocFileGenerator(
-    private val name: String,
+    fileName: String,
     equalityType: EqualityType,
-    templateName: String
+    templateName: String,
 ) : BaseFileGenerator(
     templateName,
-    if (equalityType == EqualityType.FREEZED) "bloc_with_freezed" else if (equalityType == EqualityType.EQUITABLE) "bloc_with_equatable" else "bloc"
+    when (equalityType) {
+        EqualityType.Freezed -> "bloc_with_freezed"
+        EqualityType.Equitable -> "bloc_with_equatable"
+        EqualityType.None -> "bloc"
+    },
+    "Bloc",
+    fileName,
 ) {
 
     private val templateBlocPascalCase = "bloc_pascal_case"
@@ -26,12 +30,6 @@ abstract class BlocFileGenerator(
             templateBlocDollarSignCase to dollarSignCase()
         )
     }
-
-
-    final override fun pascalCase(): String = name.toUpperCamelCase().replace("Bloc", "")
-
-    final override fun snakeCase() = name.toLowerSnakeCase().replace("_bloc", "")
-
 
 }
 

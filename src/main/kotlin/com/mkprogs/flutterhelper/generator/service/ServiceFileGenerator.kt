@@ -1,15 +1,15 @@
 package com.mkprogs.flutterhelper.generator.service
 
 import com.mkprogs.flutterhelper.generator.BaseFileGenerator
-import com.mkprogs.flutterhelper.helpers.toLowerSnakeCase
-import com.mkprogs.flutterhelper.helpers.toUpperCamelCase
 
 abstract class ServiceFileGenerator(
-    private val name: String,
-    templateName: String
+    private val fileName: String,
+    templateName: String,
 ) : BaseFileGenerator(
     templateName,
-    "service"
+    "service",
+    "Service",
+    fileName,
 ) {
 
     private val templateServicePascalCase = "service_pascal_case"
@@ -24,11 +24,6 @@ abstract class ServiceFileGenerator(
             templateServiceDollarSignCase to dollarSignCase()
         )
     }
-
-
-    final override fun pascalCase(): String = name.toUpperCamelCase().replace("Service", "")
-
-    final override fun snakeCase() = name.toLowerSnakeCase().replace("_service", "")
 
 
 }
